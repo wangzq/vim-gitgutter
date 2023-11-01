@@ -341,8 +341,8 @@ augroup gitgutter
   autocmd BufFilePre  * call s:on_buffilepre(expand('<abuf>'))
   autocmd BufFilePost * call s:on_buffilepost(expand('<abuf>'))
 
-  autocmd QuickFixCmdPre  *vimgrep* let b:gitgutter_was_enabled = gitgutter#utility#getbufvar(expand('<abuf>'), 'enabled') | GitGutterBufferDisable
-  autocmd QuickFixCmdPost *vimgrep* if b:gitgutter_was_enabled | GitGutterBufferEnable | endif | unlet b:gitgutter_was_enabled
+  autocmd QuickFixCmdPre  *vimgrep* let s:gitgutter_was_enabled = gitgutter#utility#getbufvar(expand('<abuf>'), 'enabled') | GitGutterBufferDisable
+  autocmd QuickFixCmdPost *vimgrep* if s:gitgutter_was_enabled | GitGutterBufferEnable | endif | unlet s:gitgutter_was_enabled
 augroup END
 
 " }}}
